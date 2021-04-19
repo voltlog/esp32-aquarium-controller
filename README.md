@@ -1,4 +1,4 @@
-# esp32-aquarium-controller
+# ESP32 Aquarium/Terarrium Controller
 
 This project started when a friend of mine which has a snake terrarium asked for my help to build a system that is capable of regulating temperature and humidity so the snake can live in optimum conditions. I’m not necessarily a snake lover, I would rather stay away from these kinds of creatures but that doesn’t stop me from helping my friend.
 
