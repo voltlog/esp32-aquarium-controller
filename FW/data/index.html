@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Aquarium Controller</title>
+	<!-- Bootstrap core CSS -->
+	<link href="bootstrap.min.css" rel="stylesheet"> </head>
+
+<body class="vsc-initialized">
+	<div class="container">
+		<div class="header clearfix">
+			<nav>
+				<ul class="nav nav-pills float-right">
+					<li class="nav-item"> </li>
+					<li class="nav-item"> </li>
+					<li class="nav-item"> </li>
+				</ul>
+			</nav>
+			<h2 class="text-muted" style="line-height: 48px; width: 700px; text-align: center; font-weight: 500;">Aquarium Controller</h2> </div>
+		<div class="jumbotron">
+			<p class="lead" id="date" style="height: 34px; margin-bottom: 16px; display: block; padding-top: 0px; margin-top: -50px; width: 642px;">%TIME%</p>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input cci-auto" checked="" value="auto" onclick="setAutoHandle()">
+        <label class="custom-control-label" for="customRadio1">Auto</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input cci-manual" value="manual" onclick="setManualHandle()">
+        <label class="custom-control-label" for="customRadio2">Manual</label>
+      </div>
+			<div class="container" style=""></div>
+			<table class="table" style="">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Status</th>
+						<th>Target</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Temp</td>
+						<td id="temperature">%TEMPERATURE%</td>
+						<td>
+							<div class="form-group" style="width: 150px; height: 20px; display: inline-block;">
+								<select class="form-control" id="temp_set" style="width: 100px; display: inline-block;">
+									<option value="20">20°C</option>
+									<option value="21">21°C</option>
+									<option value="22">22°C</option>
+									<option value="23">23°C</option>
+									<option value="24">24°C</option>
+									<option value="25">25°C</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Humidity</td>
+						<td id="humidity">%HUMIDITY%</td>
+						<td>
+							<div class="form-group" style="width: 150px; height: 20px; display: inline-block;">
+								<select class="form-control" id="humidity_set" style="width: 100px; display: inline-block;">
+									<option value="50%">50</option>
+									<option value="55%">55</option>
+									<option value="60%">60</option>
+									<option value="65%">65</option>
+									<option value="70%">70</option>
+									<option value="75%">75</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					<tr id="row1">
+						<td>Output #1</td>
+						<td><span class="badge badge-success" style="height: 28px; padding-top: 7px; padding-bottom: 7px; padding-right: 6px; width: 42px;" id="output1_status">%OUTPUT1_STATUS%</span></td>
+						<td>
+							<a href="/output1_on"><button type="button" class="btn btn-sm btn-success" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 24px; line-height: 16px; border-width: 2px; margin-right: 14px; width: 90px;" id="output1_on">ON</button></a>
+							<a href="/output1_off"><button type="button" class="btn btn-sm btn-danger" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 20px; line-height: 16px; border-width: 2px; margin-right: 0px; width: 90px;" id="output1_off">OFF</button></a>
+						</td>
+					</tr>
+					<tr id="row2">
+						<td>Output #2</td>
+						<td><span class="badge badge-success" style="height: 28px; padding-top: 7px; padding-bottom: 7px; padding-right: 6px; width: 42px;" id="output2_status">%OUTPUT2_STATUS%</span></td>
+						<td>
+							<a href="/output2_on"><button type="button" class="btn btn-sm btn-success" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 24px; line-height: 16px; border-width: 2px; margin-right: 14px; width: 90px;" id="output2_on">ON</button></a>
+							<a href="/output2_off"><button type="button" class="btn btn-sm btn-danger" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 20px; line-height: 16px; border-width: 2px; margin-right: 0px; width: 90px;" id="output2_off">OFF</button></a>
+						</td>
+					</tr>
+					<tr id="row3">
+						<td>Output #3</td>
+						<td><span class="badge badge-success" style="height: 28px; padding-top: 7px; padding-bottom: 7px; padding-right: 6px; width: 42px;" id="output3_status">%OUTPUT3_STATUS%</span></td>
+						<td>
+							<a href="/output3_on"><button type="button" class="btn btn-sm btn-success" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 24px; line-height: 16px; border-width: 2px; margin-right: 14px; width: 90px;" id="output3_on">ON</button></a>
+							<a href="/output3_off"><button type="button" class="btn btn-sm btn-danger" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 20px; line-height: 16px; border-width: 2px; margin-right: 0px; width: 90px;" id="output4_off">OFF</button></a>
+						</td>
+					</tr>
+					<tr id="row4">
+						<td>Output #4</td>
+						<td><span class="badge badge-success" style="height: 28px; padding-top: 7px; padding-bottom: 7px; padding-right: 6px; width: 42px;" id="output4_status">%OUTPUT4_STATUS%</span></td>
+						<td>
+							<a href="/output4_on"><button type="button" class="btn btn-sm btn-success" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 24px; line-height: 16px; border-width: 2px; margin-right: 14px; width: 90px;" id="output4_on">ON</button></a>
+							<a href="/output4_off"><button type="button" class="btn btn-sm btn-danger" style="padding-top: 0px; padding-bottom: 4px; height: 32px; padding-right: 20px; line-height: 16px; border-width: 2px; margin-right: 0px; width: 90px;" id="output4_off">OFF</button></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="row marketing">
+			<footer class="footer" style="width: auto;">
+				<p>© Voltlog 2021</p>
+			</footer>
+		</div>
+		<!-- /container -->
+	</div>
+</body>
+<script>
+
+  function onLoad() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/get_mode", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function(e) {
+      if (e.srcElement.response === 'auto') {
+        setAutoHandle();
+      } else {
+        setManualHandle();
+      }
+    }   
+  }
+
+  function setDisableStatus(rowId, status) {
+    const row = window.document.getElementById(rowId);
+
+    if (!row) return;
+    
+    if (status) {
+      row.setAttribute('style', 'pointer-events:none; opacity: 0.3;');
+    } else {
+      row.removeAttribute('style');
+    }
+  }
+
+  function setAutoHandle() {
+    setDisableStatus('row1', true);
+    window.document.querySelector('.cci-auto').checked= true;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/auto", true);
+    xhttp.send();
+  }
+  
+  function setManualHandle() {
+    setDisableStatus('row1', false);
+    window.document.querySelector('.cci-manual').checked= true;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/manual", true);
+    xhttp.send();
+  }
+
+
+  onLoad();
+
+  setInterval(function ( ) {
+    onLoad();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/humidity", true);
+    xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/temperature", true);
+    xhttp.send();
+  }, 5000 ) ;
+
+</script>
+</html>
