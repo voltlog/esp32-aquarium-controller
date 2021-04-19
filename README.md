@@ -13,4 +13,7 @@ Known issues in revA:
 - There are no mounting holes.
 - Fitting the board inside the intended enclosure required some adjustments on the round cutouts. This is something to consider if you want to use the same enclosure but if you plan to install this in a larger plastic enclosure, it shouldn't be a problem.
 
+## Safety Warning
+This control board uses mains voltage so you need to know what you are doing, otherwise, there is a high risk of electrical shock and/or fire. This is a serious topic, if you are not sure what you are doing, ask for help from an electrician. Every connection should be double checked before applying mains power.
+
 ![Image of the assembled PCB](voltlog-aquarium-ctrl.jpg)
