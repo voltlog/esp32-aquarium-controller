@@ -1,0 +1,20 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.1.9)-1*
+G04 #@! TF.CreationDate,2021-03-08T14:29:57+02:00*
+G04 #@! TF.ProjectId,Voltlog ESP32 Relay Controller,566f6c74-6c6f-4672-9045-535033322052,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Paste,Bot*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.1.9)-1) date 2021-03-08 14:29:57*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10R,5.000000X10.000000*%
+G04 APERTURE END LIST*
+D10*
+G04 #@! TO.C,TP1*
+X151000000Y-65500000D03*
+G04 #@! TD*
+M02*
